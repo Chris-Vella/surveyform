@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Survey Form</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div>
+                 <h2>Dojo Survey</h2>
+                 <p>Please fill out the survey.</p>
+            </div>
+            <form action="/process" method="POST">
+                {% csrf_token %}
+                <p>
+                    <label for="name">Your Name:</label>
+                    <input type="text" name="name" id="name">
+                </p>
+                <p>
+                    <label for="dojo_loc">Dojo Location:</label>
+                <select name="dojo_loc">
+                    <option value="Seattle">Seattle</option>
+                    <option value="LA">Los Angeles</option>
+                    <option value="DC">Washington D.C.</option>
+                    <option value="Chicago">Chicago</option>
+                </select>
+                </p>
+                <p>
+                    <label for="fave_lang">Favorite Language:</label>
+                <select name="fave_lang">
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                </select>
+                </p>
+                <p>
+                    <label for="name">Comment:</label>
+                </p>
+                <p>
+                <textarea name="comments" rows=10 cols=80></textarea>
+                </p>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
